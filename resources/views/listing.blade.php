@@ -6,7 +6,7 @@
 ><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
-   <x-card class="p-24">
+   <x-card class="">
       <div class="flex flex-col items-center justify-center text-center">
          <img
             class="w-48 mr-6 mb-6"
