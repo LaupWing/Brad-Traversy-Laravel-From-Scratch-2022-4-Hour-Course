@@ -39,6 +39,6 @@ class ListingController extends Controller
          "tags" => "required",
          "description" => "required"
       ]));
-      return redirect("/");
+      return redirect("/")->with("message", "Listing created successfully");
    }
 }
