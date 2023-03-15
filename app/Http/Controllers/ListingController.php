@@ -18,7 +18,7 @@ class ListingController extends Controller
 
    // Show single listing
    public function show(Listing $listing) {
-      return view("listing.show", [
+      return view("listings.show", [
          "listing" => $listing 
       ]);
    }
@@ -39,7 +39,7 @@ class ListingController extends Controller
          "tags" => "required",
          "description" => "required"
       ]));
-
+      dd($request->logo);
       if($request->hasFile("logo")){
          $formFields["logo"] = $request->file("logo")->store("logos", "public");
       }
