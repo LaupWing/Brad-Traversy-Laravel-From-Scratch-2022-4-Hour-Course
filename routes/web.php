@@ -23,6 +23,11 @@ Route::get("/listings/create", [ListingController::class, "create"]);
 // Store listing data
 Route::post("/listings", [ListingController::class, "store"]);
 
+// Show edit form
+Route::get("/listings/{listing}/edit", [ListingController::class, "edit"]);
+
+// Show edit form
+Route::get("/listings/{listing}", [ListingController::class, "edit"]);
 
 // Show single listing
 Route::get("/listings/{listing}", [ListingController::class, "show"]);
