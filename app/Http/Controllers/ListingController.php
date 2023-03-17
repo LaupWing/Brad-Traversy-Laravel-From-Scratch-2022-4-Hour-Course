@@ -66,7 +66,7 @@ class ListingController extends Controller
          $formFields["logo"] = $request->file("logo")->store("logos", "public");
       }
 
-      $listing->create($formFields);
+      $listing->update($formFields);
       return back()->with("message", "Listing updated successfully");
    }
 }
