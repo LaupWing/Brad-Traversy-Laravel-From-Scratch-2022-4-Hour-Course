@@ -5,17 +5,24 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
-    {
-        \App\Models\User::factory(5)->create();
-        Listing::factory(6)->create();
+   /**
+    * Seed the application's database.
+    */
+   public function run(): void
+   {
+      //   \App\Models\User::factory(5)->create();
+      $user = User::factory()->create([
+         "name" => "Laup Wing",
+         "email" => "laupwing@gmail.com"
+      ]);
+      Listing::factory(6)->create([
+         "user_id" => $user->id 
+      ]);
       //   Listing::create([
       //    'title' => 'Laravel Senior Developer',
       //    'tags' => 'laravel, javascript',
@@ -36,9 +43,9 @@ class DatabaseSeeder extends Seeder
       //    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
       //   ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-    }
+      // \App\Models\User::factory()->create([
+      //     'name' => 'Test User',
+      //     'email' => 'test@example.com',
+      // ]);
+   }
 }
